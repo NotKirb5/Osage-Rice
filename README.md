@@ -1,2 +1,2 @@
 # Osage-Rice
-Arch Hyprland Rice based off of InabaKumori
+Arch Hyprland Rice based off of Inabakumori
