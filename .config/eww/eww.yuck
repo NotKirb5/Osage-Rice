@@ -1,0 +1,98 @@
+(defpoll current-time :interval "1s" "date '+%A, %b %d - %H:%M'")
+(defpoll cava-bars :interval "0.01s" "tail -n 1 /tmp/eww-cava.fifo")
+(defpoll song :interval "1s" "playerctl metadata title")
+
+
+(defvar eww "eww -c ~/.config/eww/")
+(defvar powerhover false)
+
+
+
+(defwidget cava []
+  (box
+    :class "musicbox"
+    :orientation "v"
+    
+    (label :text cava-bars :class "cava")
+
+
+  )
+)
+
+
+
+
+(defwidget musicmenu []
+  (box
+    :class "musicmain"
+    :spacing "30"
+    :orientation "h"
+    :space-evenly false
+    (button :class "button" :onclick "playerctl previous" "")
+    (label :text song :class "songname")
+    (button :class "button" :onclick "playerctl play-pause" "")
+    (button :class "buttonright" :onclick "playerctl next" "")
+  )
+)
+
+
+
+
+(defwindow music
+ :geometry (geometry :y "10"  :height "30" :anchor "top center")
+ :exclusive false
+ :stacking "bg"
+ :focusable false
+ :monitor "[1,0]"
+ (musicmenu)
+)
+
+
+
+(defwidget powermenu []
+  (box
+    :class "powercontainer"
+    :orientation "v"
+
+    (box
+      :class "containertop"
+      :orientation "h"
+      :space-evenly false
+      :spacing "50"
+      (eventbox
+        :class "powerbutton"
+        :onclick "${eww} close power"
+        (image :path "assets/eppyosage.jpg" :width "50" :height "50" )
+      )
+    )
+
+    (box
+      :class "containerbottom"
+      :orientation "h"
+      :space-evenly false
+      :spacing "50"
+    )
+
+    
+  )
+)
+
+(defwindow power
+  :geometry (geometry :width "100%" :height "100%" :anchor "top left" )
+  :stacking "overlay"
+  :focusable false
+  :exclusive false
+  :monitor "[1,0]"
+  (powermenu)
+)
+
+
+
+(defwindow main
+  ;;; its 3am and im crying ts sucks so much with multiple monitors like WHYYYYY ;;;
+  :monitor '[1, 0]' 
+  :geometry (geometry :x "0" :y "0" :width "500" :height "0" :anchor "bottom center")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  (cava))

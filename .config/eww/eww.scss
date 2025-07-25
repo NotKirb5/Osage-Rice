@@ -1,0 +1,55 @@
+$bg: #252525;
+$fg: #b2b2b2;
+
+* {
+  all: unset;
+  font-family: "FantasqueSansM Nerd Font", sans-serif;
+  color: $fg;
+}
+
+.clock {
+  background-color: $bg;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+
+.cava{
+  font-size: 310px;
+  color: $bg;
+}
+
+.songname{
+  color: $fg;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.button{
+  font-size: 15px;
+  padding: 5px;
+}
+
+.buttonright{
+  font-size: 15px;
+  padding: 5px;
+  padding-right: 10px;
+}
+
+.powerstart{
+  background: $bg;
+}
+
+
+.musicmain{
+  background: $bg;
+  border-radius: 30px;
+  opacity: 0.9;
+}
+
+.powercontainer{
+  background: $bg;
+  opacity: 0.5;
+}
+
