@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/osage-rice/.config"
@@ -47,15 +47,31 @@ else
   echo "$CACHE_WAL not found; skipping..."
 fi
 
-echo "Applying dotfiles with stow"
-cd "$HOME/Osage-Rice" || {
-  echo "Could not access $HOME/Osage-Rice"
-  exit 1
-}
-stow .
+echo "Applying dotfiles"
 
+cd $HOME
+
+git clone https://github.com/NotKirb5/Osage-Rice.git
+
+cd Osage-Rice
+
+cp .config ~
+
+cp Pictures ~
+
+cp Music ~
 # Go back to home directory
 cd $HOME
+
+#add songs to cmus
+
+cmus
+
+cmus_remote -C "pl-create inabakumori"
+cmus_remote -C "pl-delete Default"
+
+cmus_remote -C "add -p ~/Music/inabakumori/"
+
 # Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -87,3 +103,7 @@ sudo systemctl start bluetooth.service
 
 # Change shell to zsh
 chsh -s /usr/bin/zsh
+
+echo "rebooting lol hope this works"
+
+sudo reboot
