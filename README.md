@@ -1,6 +1,7 @@
 # Osage-Rice
 Arch Hyprland Rice based off of Inabakumori
 
+also dont use the script yet i havent tested it at all
 
 # Screenshots
 
