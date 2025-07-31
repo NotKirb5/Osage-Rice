@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/osage-rice/.config"
@@ -71,6 +71,8 @@ cmus_remote -C "pl-create inabakumori"
 cmus_remote -C "pl-delete Default"
 
 cmus_remote -C "add -p ~/Music/inabakumori/"
+
+pkill cmus
 
 # Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay.git
