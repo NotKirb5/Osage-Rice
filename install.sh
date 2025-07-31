@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland cmus cmus-remote
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/osage-rice/.config"
@@ -55,11 +55,11 @@ git clone https://github.com/NotKirb5/Osage-Rice.git
 
 cd Osage-Rice
 
-cp .config ~
+cp -r .config ~
 
-cp Pictures ~
+cp -r Pictures ~
 
-cp Music ~
+cp -r Music ~
 # Go back to home directory
 cd $HOME
 
