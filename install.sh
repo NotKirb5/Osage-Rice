@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland cmus
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland dolphin dunst qt5-wayland cmus
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
@@ -55,11 +55,11 @@ git clone https://github.com/NotKirb5/Osage-Rice.git
 
 cd Osage-Rice
 
-cp -r .config ~
+cp -r $HOME/Osage-Rice/.config ~
 
-cp -r Pictures ~
+cp -r $HOME/Osage-Rice/Pictures ~
 
-cp -r Music ~
+cp -r $HOME/Osage-Rice/Music ~
 # Go back to home directory
 cd $HOME
 
@@ -79,7 +79,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-yay -S --noconfirm neofetch cava battop paru
+yay -S --noconfirm neofetch cava battop paru wlogout
 
 cd $HOME
 
