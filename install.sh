@@ -1,9 +1,9 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland cmus cmus-remote
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm wlogout hyprland dolphin dunst grin qt5-wayland gt6-wayland cmus
 
 CONFIG_DIR="$HOME/.config"
-DOTFILES_CONFIG="$HOME/osage-rice/.config"
+DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
 BACKUP_SUFFIX=".bak"
 
 echo "Backing up configuration directories in $CONFIG_DIR based on dotfiles in $DOTFILES_CONFIG"
@@ -65,7 +65,7 @@ cd $HOME
 
 #add songs to cmus
 
-cmus
+cmus &
 
 cmus_remote -C "pl-create inabakumori"
 cmus_remote -C "pl-delete Default"
