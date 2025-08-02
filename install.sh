@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland dolphin dunst qt5-wayland cmus
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland dolphin dunst qt5-wayland cmus waybar
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
