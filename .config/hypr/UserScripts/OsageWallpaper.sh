@@ -31,7 +31,7 @@ while true; do
       for monitor in $monitors; do
         swww img -o "$monitor" "$path" $SWWW_PARAMS
       done
-      "$SCRIPTSDIR/WallustSwww.sh"
+      cp -r "$path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
       sleep 2
 
     fi

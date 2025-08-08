@@ -91,7 +91,7 @@
 	"tooltip-format": " {device_alias}",
 	"tooltip-format-connected": "{device_enumerate}",
 	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
-	"tooltip": true,
+	"tooltip": false,
 	"on-click": "blueman-manager",
 },
 
@@ -100,20 +100,7 @@
     //"format": " {:%I:%M %p}", // AM PM format
     "format": " {:%H:%M:%S}", // 24H
 	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
-	"tooltip-format": "<tt><small>{calendar}</small></tt>",
-	"calendar": {
-		"mode": "year",
-		"mode-mon-col": 3,
-		"weeks-pos": "right",
-		"on-scroll": 1,
-		"format": {
-			"months": "<span color='#ffead3'><b>{}</b></span>",
-			"days": "<span color='#ecc6d9'><b>{}</b></span>",
-			"weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
-			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-		}
-	}
+  "tooltip": false
 },
 
 "actions": {
@@ -128,7 +115,6 @@
     //"format": " {:%I:%M %p}", // AM PM format
     "format": "  {:%H:%M}", // 24H
     "format-alt": "{:%A  |  %H:%M  |  %e %B}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 },
 
 "clock#3": {
@@ -142,14 +128,12 @@
     //"format": "{:%B | %a %d, %Y | %I:%M %p}", // AM PM format
     "format": "{:%B | %a %d, %Y | %H:%M}", // 24H
 	"format-alt": "{:%a %b %d, %G}",
-	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 
 "clock#5": {
     //"format": "{:%A, %I:%M %P}", // AM PM format
     "format": "{:%a %d | %H:%M}", // 24H
 	"format-alt": "{:%A, %d %B, %Y (%R)}",
-	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 
 "cpu": {
@@ -167,7 +151,7 @@
 "disk": {
 	"interval": 30,
 	//"format": "󰋊",
-	"path": "/",
+	"path": "/home/boykisser/",
 	//"format-alt-click": "click",
 	"format": "{percentage_used}% 󰋊",
 	//"tooltip": true,

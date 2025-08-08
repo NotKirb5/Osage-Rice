@@ -72,7 +72,35 @@ cmus_remote -C "pl-delete Default"
 
 cmus_remote -C "add -p ~/Music/inabakumori/"
 
+#add cmus theme
+
+cp $HOME/Osage-Rice/cmus/inabakumori.theme $HOME/.config/cmus
+
+cmus_remote -C "colorscheme inabakumori"
+
 pkill cmus
+
+echo "Do you want to install lazyvim configs (y/n)"
+read -r choice
+
+if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+  echo "Installing..."
+  # required
+  mv $HOME/.config/nvim{,.bak}
+
+  # optional but recommended
+  mv $HOME/.local/share/nvim{,.bak}
+  mv $HOME/.local/state/nvim{,.bak}
+  mv $HOME/.cache/nvim{,.bak}
+  git clone https://github.com/LazyVim/starter $HOME/.config/nvim
+  rm -rf $HOME/.config/nvim/.git
+
+  cp -r $HOME/Osage-Rice/nvim/lua $HOME/.config/nvim
+  cp -r $HOME/Osage-Rice/nvim/init.lua $HOME/.config/nvim
+
+else
+  echo "Skipping installation."
+fi
 
 # Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay.git
@@ -85,6 +113,22 @@ cd $HOME
 
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FantasqueSansMono.zip
 mkdir -p "$HOME/.local/share/fonts/FantasqueSansMonoNerd" && unzip -o -q "FantasqueSansMono.zip" -d "$HOME/.local/share/fonts/FantasqueSansMono" && echo "FantasqueSansMono installed successfully" | tee -a "$LOG"
+
+wget -q https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/07_SourceHanSansJ.zip
+
+mkdir -p "$HOME/.local/share/fonts/07_SourceHanSansJ.zip" && unzip -o -q "07_SourceHanSansJ.zip" -d "$HOME/.local/share/fonts/07_SourceHanSansJ" && echo "Jp font installed successfully" | tee -a "$LOG"
+
+
+#add zsh theme
+
+cp -r $HOME/Osage-Rice/zsh/.zshrc $HOME
+cp -r $HOME/Osage-Rice/zsh/comfyline.zsh-theme $HOME/.oh-my-zsh/themes
+cp -r $HOME/Osage-Rice/zsh/oh-my-zsh.sh $HOME/.oh-my-zsh
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+source ~/.zshrc
 
 curl --proto '=https' -- tlsv1.2 -sSf https://sh.rustup.rs | sh
 

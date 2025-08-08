@@ -22,24 +22,21 @@ $fg: #b2b2b2;
 
 .songname{
   color: $fg;
-  font-size: 15px;
+  font-size: 20px;
   padding: 5px;
 }
 
 .button{
-  font-size: 15px;
-  padding: 5px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .buttonright{
-  font-size: 15px;
-  padding: 5px;
-  padding-right: 10px;
+  font-size: 20px;
+  padding: 10px;
+  padding-right: 15px;
 }
 
-.powerstart{
-  background: $bg;
-}
 
 
 .musicmain{
@@ -48,8 +45,55 @@ $fg: #b2b2b2;
   opacity: 0.9;
 }
 
-.powercontainer{
+
+.musicarea{
+  border-radius: 30px;
   background: $bg;
-  opacity: 0.5;
 }
 
+
+.musicbuttonhome{
+  font-size: 50px;
+  padding: 10px;
+}
+
+.musicbuttonright{
+  font-size: 50px;
+  padding: 10px;
+  padding-right: 15px;
+}
+
+.songnamehome{
+  color: $fg;
+  font-size: 50px;
+  padding: 5px;
+}
+
+
+.cavahome{
+  font-size:75px;
+}
+
+
+.clockwidget{
+  background: $bg;
+  border-radius: 30px;
+}
+
+.time{
+  font-size:35px;
+}
+
+.syswidget{
+  background: $bg;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.systext{
+  font-size: 30px;
+}
+
+.percentage{
+  font-size: 30px;
+}

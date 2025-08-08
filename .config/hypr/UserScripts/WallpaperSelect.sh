@@ -103,7 +103,6 @@ set_sddm_wallpaper() {
   sleep 1
   sddm_simple="/usr/share/sddm/themes/simple_sddm_2"
 
-  
 }
 
 modify_startup_config() {

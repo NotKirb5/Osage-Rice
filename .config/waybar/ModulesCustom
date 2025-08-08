@@ -123,8 +123,8 @@
 	"return-type": "json",
 	"max-length": 25,
 	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-	"on-click-middle": "playerctl play-pause",
-	"on-click": "playerctl previous",
+	"on-click-middle": "playerctl previous",
+	"on-click": "playerctl play-pause",
 	"on-click-right": "playerctl next",
 	"scroll-step": 5.0,
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
@@ -134,10 +134,10 @@
     
 "custom/power": {
 	"format": " ⏻ ",
-	"on-click": "hyprctl dispatch exit",
+	"on-click": "wlogout",
 	"on-click-right": "reboot",
 	"tooltip": true,
-	"tooltip-format": "Left Click: Restart Hyprland\nRight Click: Reboot System",
+	"tooltip-format": "Left Click: Power Menu",
 },
 
 "custom/reboot": {
