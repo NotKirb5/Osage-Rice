@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland dolphin dunst qt5-wayland cmus waybar
+sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
@@ -118,7 +118,6 @@ wget -q https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/
 
 mkdir -p "$HOME/.local/share/fonts/07_SourceHanSansJ.zip" && unzip -o -q "07_SourceHanSansJ.zip" -d "$HOME/.local/share/fonts/07_SourceHanSansJ" && echo "Jp font installed successfully" | tee -a "$LOG"
 
-
 #add zsh theme
 
 cp -r $HOME/Osage-Rice/zsh/.zshrc $HOME
@@ -126,9 +125,10 @@ cp -r $HOME/Osage-Rice/zsh/comfyline.zsh-theme $HOME/.oh-my-zsh/themes
 cp -r $HOME/Osage-Rice/zsh/oh-my-zsh.sh $HOME/.oh-my-zsh
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cd $HOME/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 source ~/.zshrc
+cd $HOME
 
 curl --proto '=https' -- tlsv1.2 -sSf https://sh.rustup.rs | sh
 
