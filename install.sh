@@ -118,7 +118,9 @@ wget -q https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/
 
 mkdir -p "$HOME/.local/share/fonts/07_SourceHanSansJ.zip" && unzip -o -q "07_SourceHanSansJ.zip" -d "$HOME/.local/share/fonts/07_SourceHanSansJ" && echo "Jp font installed successfully" | tee -a "$LOG"
 
-#add zsh theme
+#add zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 cp -r $HOME/Osage-Rice/zsh/.zshrc $HOME
 cp -r $HOME/Osage-Rice/zsh/comfyline.zsh-theme $HOME/.oh-my-zsh/themes
