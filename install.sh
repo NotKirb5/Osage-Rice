@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
+sudo pacman -S --noconfirm github-cli git 7zip unzip playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
@@ -62,23 +62,6 @@ cp -r $HOME/Osage-Rice/Pictures ~
 cp -r $HOME/Osage-Rice/Music ~
 # Go back to home directory
 cd $HOME
-
-#add songs to cmus
-
-cmus &
-
-cmus_remote -C "pl-create inabakumori"
-cmus_remote -C "pl-delete Default"
-
-cmus_remote -C "add -p ~/Music/inabakumori/"
-
-#add cmus theme
-
-cp $HOME/Osage-Rice/cmus/inabakumori.theme $HOME/.config/cmus
-
-cmus_remote -C "colorscheme inabakumori"
-
-pkill cmus
 
 echo "Do you want to install lazyvim configs (y/n)"
 read -r choice
