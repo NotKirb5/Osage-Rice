@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git 7zip unzip playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
+sudo pacman -S --noconfirm github-cli git fastfetch 7zip unzip playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
@@ -90,7 +90,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-yay -S --noconfirm neofetch cava battop paru wlogout
+yay -S --noconfirm cava battop paru wlogout
 
 cd $HOME
 
