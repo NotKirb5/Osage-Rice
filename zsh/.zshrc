@@ -76,9 +76,8 @@ plugins=(
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-neofetch
 source $ZSH/oh-my-zsh.sh
-
+fastfetch
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,4 +106,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias rain="terminal_rain --rain-color white --lightning-color yellow --lightning-chance 2.0"
+alias gs="git status"
+alias meow="fastfetch"
 export LOFI="false"
