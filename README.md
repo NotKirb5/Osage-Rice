@@ -1,6 +1,8 @@
 # Osage-Rice
 Arch Hyprland Rice based off of Inabakumori
 
+yt video: https://youtu.be/836ZHuFLHHc
+
 Disclaimer: this is a rice made for my laptop and any bugs that that may occur due to diffrent monitor resolutions, input or output settings will probably not be very high on my priority list (basically i just wanna make a pretty desktop
 
 - Distro: Arch
