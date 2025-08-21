@@ -1,0 +1,17 @@
+
+.notifwidget {
+    background-color: mix($bg, $background, 0%);
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.notiftext{
+  color:$fg;
+  font-size:25px;
+}
+
+.uptext{
+  color:$fg;
+  font-size:20px;
+}

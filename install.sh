@@ -1,6 +1,6 @@
 cd $HOME
 
-sudo pacman -S --noconfirm github-cli git fastfetch 7zip unzip playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus waybar
+sudo pacman -S --noconfirm github-cli git fastfetch 7zip unzip playerctl rofi wayland yazi neovim networkmanager zsh kitty imagemagick pavucontrol swww swaync stow hypridle hyprlock sddm hyprland hyprpicker slurp grim dolphin dunst qt5-wayland cmus
 
 CONFIG_DIR="$HOME/.config"
 DOTFILES_CONFIG="$HOME/Osage-Rice/.config"
@@ -12,7 +12,6 @@ cd "$CONFIG_DIR" || {
   echo "Could not access $CONFIG_DIR"
   exit 1
 }
-
 # Loop over every directory in the dotfiles repo
 for dir in "$DOTFILES_CONFIG"/*/; do
   folder_name=$(basename "$dir")
@@ -62,7 +61,7 @@ cp -r $HOME/Osage-Rice/Pictures ~
 cp -r $HOME/Osage-Rice/Music ~
 # Go back to home directory
 cd $HOME
-
+#hello
 echo "Do you want to install lazyvim configs (y/n)"
 read -r choice
 

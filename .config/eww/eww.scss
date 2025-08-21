@@ -1,9 +1,12 @@
+@import "./colors.scss"
+
 $bg: #252525;
 $fg: #b2b2b2;
 
 * {
   all: unset;
   font-family: "FantasqueSansM Nerd Font", sans-serif;
+  font-weight:bold;
   color: $fg;
 }
 
@@ -97,3 +100,21 @@ $fg: #b2b2b2;
 .percentage{
   font-size: 30px;
 }
+
+.osagebox{
+  background:$bg;
+  border-radius:30px;
+}
+
+.osagetext{
+  font-size: 7px;
+}
+
+@import "scss/bar.scss";
+@import "scss/side-bar.scss";
+@import "scss/wallpaper.scss";
+@import "scss/device-control.scss";
+@import "scss/resource-monitor.scss";
+@import "scss/notification.scss";
+@import "scss/custom-calendar.scss";
+@import "scss/music-control.scss";

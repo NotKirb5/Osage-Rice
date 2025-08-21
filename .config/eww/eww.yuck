@@ -2,11 +2,8 @@
 (defpoll current-time :interval "1s" "date +'%H : %M : %S'")
 (defpoll cava-bars :interval "0.01s" "tail -n 1 /tmp/eww-cava.fifo")
 (defpoll song :interval "1s" "playerctl metadata title")
-(defpoll cpu-usage :interval "2s" `top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8 "%"}'`)
-(defpoll ram-usage :interval "2s" `free -m | awk '/Mem:/ { printf("%.0f%%", $3/$2 * 100.0) }'`)
-(defpoll disk-usage :interval "120s" `df -h /home | awk 'NR==2 {print $5}'`)
 
-(defvar eww "eww -c ~/.config/eww/")
+(defvar eww "~/eww/target/release/eww -c ~/.config/eww/")
 
 
 
@@ -66,82 +63,8 @@
 
 
 
-(defwindow homemusic
-  :monitor '[1,0]'
-  :geometry (geometry :x "20%" :y "20%" :width "30%" :height "20%" :anchor "top left")
-  :stacking "bg"
-  :exclusive false
-  :focusable false
-  (musicwidget)
-)
-
-(defwidget musicwidget []
-  (box
-    :class "musicarea"
-    :orientation "v"
-    :spacing "10"
-    (label :text song :class "songnamehome" :limit-width "11")
-    (box
-      :class "musicoptions"
-      :orientation "h"
-      :spacing "20"
-      (button :class "musicbuttonhome" :onclick "playerctl previous" "")
-      (button :class "musicbuttonhome" :onclick "playerctl play-pause" "")
-      (button :class "musicbuttonright" :onclick "playerctl next" "")
-    )
-    (label :text cava-bars :class "cavahome")
-  )
-)
-
-(defwindow homeclock
-  :monitor '[1,0]'
-  :geometry (geometry :x "51%" :y "20%" :width "25%" :height "22%" :anchor "top left")
-  :stacking "bg"
-  :exclusive false
-  :focusable false
-  (clockwidget)
-)
-
-(defwidget clockwidget []
-  (box
-    :class "clockwidget"
-    :orientation "v"
-    (label :text current-day :class "time")
-    (label :text current-time :class "time")
-  )
-)
-
-(defwindow homesys
-  :monitor "[1,0]"
-  :geometry (geometry :x "20%" :y "44%" :width "30%" :height "10%" :anchor "top left")
-  :stacking "bg"
-  :exclusive false
-  :focusable false
-  (systemwidget)
-
-)
-
-(defwidget systemwidget []
-  (box
-    :class "syswidget"
-    :orientation "v"
-    :space-evenly false
-    :spacing "10"
-    (box
-      :orientation "h"
-
-      (label :text "CPU usage" :class "systext")
-      (label :text "RAM usage" :class "systext")
-      (label :text "Disk usage" :class "systext")
-    )
-    (box
-      :orientation "h"
-
-      (label :text cpu-usage :class "percentage")
-      (label :text ram-usage :class "percentage")
-      (label :text disk-usage :class "percentage")
-    )
-  )
-)
 
 
+
+
+(include "bar.yuck")
