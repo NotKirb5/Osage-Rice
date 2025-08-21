@@ -68,7 +68,7 @@ oh-my-zsh plugins might not install correctly, also just do that manually
 
 this will be breif but all keybinds are in the hyprland.conf file if you dont like it change it
 
-### ⚡ Launch Applications
+### Launch Applications
 
 | Action                 | Keybind                    | Description                          |
 |------------------------|----------------------------|--------------------------------------|
@@ -78,7 +78,7 @@ this will be breif but all keybinds are in the hyprland.conf file if you dont li
 
 ---
 
-### 🧰 System Scripts
+### System Scripts
 
 | Action                  | Keybind                  | Description                            |
 |-------------------------|--------------------------|----------------------------------------|
@@ -94,7 +94,7 @@ this will be breif but all keybinds are in the hyprland.conf file if you dont li
 
 ---
 
-### 🪟 Window Actions
+### Window Actions
 
 | Action            | Keybind           | Description                           |
 |-------------------|-------------------|---------------------------------------|
@@ -115,7 +115,7 @@ Use `SUPER + CTRL + arrow key` to move a focused window in the specified directi
 Also `SUPER + ALT + arrow key` swaps window positions
 
 
-### 📏 Resize Tiled Window
+### Resize Tiled Window
 Use `SUPER + SHIFT + arrow key` to resize the focused window:
 
 
